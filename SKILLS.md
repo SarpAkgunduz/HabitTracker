@@ -123,9 +123,10 @@ interface GamificationState {
 ## Faz Planı
 
 - [x] **Faz 0 — Mimari refactor**: `/src` yapısını kur, mevcut dosyaları taşı, deprecated async-storage paketini değiştir.
-- [ ] **Faz 1 — Template CRUD**: gerçek ekleme/silme/düzenleme/sıralama, repository + zustand store bağlantısı (CreateTemplate.tsx'teki hardcoded veri kalkar).
-- [ ] **Faz 2 — Günlük tik atma**: DailyLog akışı, tik attıkça persistence, streak/vitality hesaplama.
-- [ ] **Faz 3 — Takvim component**.
+- [x] **Faz 1 — Template CRUD**: gerçek ekleme/silme/düzenleme/sıralama, repository + zustand store bağlantısı (`TemplateRepository`, `useTemplateStore`, HomeScreen listesi, CreateTemplateScreen düzenleme modu).
+- [x] **Faz 2 — Günlük tik atma**: `DailyLogRepository` + `useDailyLogStore`, `DailyChecklistScreen`, `utils/progress.ts` (streak/best/vitality; bugün bitmediyse streak bozulmaz).
+- [x] **Faz 3 — Takvim component**: `CalendarScreen` (react-native-calendars + custom `dayComponent`; tam=koyu yeşil, kısmi=açık yeşil, bugün=mavi çerçeve, geçmiş güne dokunup düzenleme).
+- [x] **Bildirimler / zamanlanmış hatırlatıcılar**: `@notifee/react-native` ile yerel trigger bildirimleri (`services/notifications.ts`), `RemindersScreen` (saat, gün seçimi, opsiyonel template), `useReminderStore`. Uygulama açılışında tüm hatırlatıcılar yeniden kurulur; bildirime tıklayınca ilgili template'in checklist'i açılır.
 - [ ] **Faz 4 — İdle game gamification**: DP/Level/Tier/Rebirth motoru, tema seçimi (Savaşçı/Bahçe) onboarding'i, Lottie entegrasyonu, micro-interactions.
 - [ ] **Faz 5 — Apple Watch companion**: Swift/SwiftUI watch target + WatchConnectivity senkronizasyonu.
 

@@ -24,3 +24,15 @@ export interface StreakInfo {
   bestStreak: number;
   vitalityScore: number; // 0-100, rolling consistency score
 }
+
+export interface Reminder {
+  id: string;
+  title: string;
+  hour: number; // 0-23
+  minute: number; // 0-59
+  weekdays: number[]; // 1 (Mon) .. 7 (Sun); empty or all 7 = every day
+  templateId?: string; // optional: remind about a specific template
+  enabled: boolean;
+}
+
+export type DayStatus = 'full' | 'partial' | 'none';
